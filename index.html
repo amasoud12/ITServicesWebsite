@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechNova IT Services</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">TechNova</h1>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Innovative IT Solutions for Your Business</h2>
+      <p>We provide managed IT services, cloud solutions, cybersecurity, and more.</p>
+      <button onclick="location.href='#services'">Explore Services</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search services...">
+      <select id="sort">
+        <option value="default">Sort By</option>
+        <option value="az">A-Z</option>
+        <option value="za">Z-A</option>
+      </select>
+    </div>
+    <div class="service-list">
+      <div class="service-item">
+        <img src="images/cloud.jpg" alt="Cloud Solutions">
+        <h3>Cloud Solutions</h3>
+        <p>Scale your business with our secure and flexible cloud infrastructure.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/cyber.jpg" alt="Cybersecurity">
+        <h3>Cybersecurity</h3>
+        <p>Protect your data and systems with our 24/7 monitoring and response services.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/support.jpg" alt="IT Support">
+        <h3>IT Support</h3>
+        <p>Reliable technical support tailored to your business needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About TechNova</h2>
+    <p>TechNova is a team of certified professionals dedicated to providing cutting-edge IT services for small to medium-sized businesses. With over 10 years of experience, we empower companies to thrive in a digital world.</p>
+    <video controls width="600">
+      <source src="videos/intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form action="submit_form.php" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 TechNova IT Services. All rights reserved.</p>
+  </footer>
+</body>
+</html>
