@@ -1,88 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechNova IT Services</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova IT Services</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://source.unsplash.com/1600x900/?technology,server') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        header, footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .services, .contact-form, .media-section, .filters {
+            margin-top: 40px;
+        }
+        button {
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0077cc;
+        }
+        input, select {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">TechNova</h1>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <header>
+        <h1>TechNova IT Services</h1>
+        <p>Your partner in technology solutions</p>
+    </header>
+
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Innovative IT Solutions for Your Business</h2>
-      <p>We provide managed IT services, cloud solutions, cybersecurity, and more.</p>
-      <button onclick="location.href='#services'">Explore Services</button>
+    <div class="container">
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of IT services including network setup, cloud solutions, cybersecurity, and tech support.</p>
+            <button onclick="alert('Service details coming soon!')">Learn More</button>
+        </section>
+
+        <section id="about" class="media-section">
+            <h2>About Us</h2>
+            <p>TechNova has been providing expert IT services to businesses for over a decade. We pride ourselves on reliability and excellence.</p>
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="https://source.unsplash.com/800x400/?team,tech" alt="Our Team">
+        </section>
+
+        <section class="filters">
+            <h2>Search and Filter Services</h2>
+            <input type="text" id="searchInput" onkeyup="searchServices()" placeholder="Search for services..">
+            <select id="sortSelect" onchange="sortServices()">
+                <option value="default">Sort By</option>
+                <option value="name">Name</option>
+                <option value="category">Category</option>
+            </select>
+            <ul id="servicesList">
+                <li data-name="Cloud Solutions" data-category="Cloud">Cloud Solutions</li>
+                <li data-name="Cybersecurity" data-category="Security">Cybersecurity</li>
+                <li data-name="Network Setup" data-category="Infrastructure">Network Setup</li>
+                <li data-name="Tech Support" data-category="Support">Tech Support</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="contact-form">
+            <h2>Contact Us</h2>
+            <form method="POST" action="contact.php">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" rows="5" placeholder="Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </div>
-  </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="filters">
-      <input type="text" id="search" placeholder="Search services...">
-      <select id="sort">
-        <option value="default">Sort By</option>
-        <option value="az">A-Z</option>
-        <option value="za">Z-A</option>
-      </select>
-    </div>
-    <div class="service-list">
-      <div class="service-item">
-        <img src="images/cloud.jpg" alt="Cloud Solutions">
-        <h3>Cloud Solutions</h3>
-        <p>Scale your business with our secure and flexible cloud infrastructure.</p>
-      </div>
-      <div class="service-item">
-        <img src="images/cyber.jpg" alt="Cybersecurity">
-        <h3>Cybersecurity</h3>
-        <p>Protect your data and systems with our 24/7 monitoring and response services.</p>
-      </div>
-      <div class="service-item">
-        <img src="images/support.jpg" alt="IT Support">
-        <h3>IT Support</h3>
-        <p>Reliable technical support tailored to your business needs.</p>
-      </div>
-    </div>
-  </section>
+    <footer>
+        <p>&copy; 2025 TechNova IT Services. All rights reserved.</p>
+    </footer>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About TechNova</h2>
-    <p>TechNova is a team of certified professionals dedicated to providing cutting-edge IT services for small to medium-sized businesses. With over 10 years of experience, we empower companies to thrive in a digital world.</p>
-    <video controls width="600">
-      <source src="videos/intro.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </section>
+    <script>
+        function searchServices() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('#servicesList li');
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(input) ? '' : 'none';
+            });
+        }
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form action="submit_form.php" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+        function sortServices() {
+            const sortValue = document.getElementById('sortSelect').value;
+            const list = document.getElementById('servicesList');
+            const items = Array.from(list.getElementsByTagName('li'));
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 TechNova IT Services. All rights reserved.</p>
-  </footer>
+            items.sort((a, b) => {
+                const aVal = a.getAttribute('data-' + sortValue).toLowerCase();
+                const bVal = b.getAttribute('data-' + sortValue).toLowerCase();
+                return aVal.localeCompare(bVal);
+            });
+
+            list.innerHTML = '';
+            items.forEach(item => list.appendChild(item));
+        }
+    </script>
 </body>
 </html>
